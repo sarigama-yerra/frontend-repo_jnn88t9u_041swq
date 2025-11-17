@@ -6,46 +6,52 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        brand: {
+          accent: '#FFB000', // primary yellow-orange
+          accentDark: '#E69A00',
+          teal: '#0ea5a4',
+          tealDark: '#0b8484',
+          ink: '#0f172a',
+          paper: '#fffaf0',
+        }
+      },
+      borderRadius: {
+        md: '8px',
+        lg: '12px'
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        geist: ['Geist', 'system-ui', 'sans-serif'],
-        'geist-mono': ['Geist Mono', 'monospace'],
-        mona: ['Mona Sans', 'system-ui', 'sans-serif'],
-        'ibm-plex': ['IBM Plex Sans', 'system-ui', 'sans-serif'],
-        manrope: ['Manrope', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        raise: '0 6px 16px rgba(0,0,0,0.12)'
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
-        'fade-out': 'fadeOut 0.5s ease-in-out',
-        'slide-in': 'slideIn 0.3s ease-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-        'bounce-in': 'bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-        'spin-slow': 'spin 3s linear infinite',
+        'carousel': 'carousel 24s linear infinite',
+        'accordion': 'accordion 300ms ease-in-out',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        fadeOut: {
-          '0%': { opacity: '1' },
-          '100%': { opacity: '0' },
+        carousel: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' }
         },
-        slideIn: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(100%)' },
-          '100%': { transform: 'translateY(0)' },
-        },
-        bounceIn: {
-          '0%': { opacity: '0', transform: 'scale(0.3)' },
-          '50%': { transform: 'scale(1.05)' },
-          '70%': { transform: 'scale(0.9)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
+        accordion: {
+          '0%': { height: '0' },
+          '100%': { height: 'var(--radix-accordion-content-height)' }
+        }
       },
+      screens: {
+        xs: '480px',
+        sm: '480px',
+        md: '768px',
+        lg: '1200px'
+      }
     },
   },
   plugins: [],
